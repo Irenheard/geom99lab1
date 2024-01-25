@@ -4,22 +4,26 @@ https://developers.google.com/maps/documentation/javascript/examples/polyline-si
 */
 
 function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 3,
-    center: { lat: 0, lng: -180 },
-    mapTypeId: "terrain",
-  });
+	// location variables???
+	const toronto = { lat: 43.677, lng: -79.632 };
+	
+	const map = new google.maps.Map(document.getElementById("map"), {
+	zoom: 3,
+	center: { lat: 15.608, lng: -19.072 },
+	mapTypeId: "terrain",
+	});
  
     const torontoToLondon = [
 	// Toronto Pearson Airport
-    { lat: 43.677, lng: -79.632 },
+    //{ lat: 43.677, lng: -79.632 },
+	toronto,
 	// London Heathrow Airport
     { lat: 51.468, lng: -0.454 },
   ];
     const flightOne = new google.maps.Polyline({
     path: torontoToLondon,
     geodesic: true,
-    strokeColor: "#FF0000",
+    strokeColor: "#000000",
     strokeOpacity: 1.0,
     strokeWeight: 2,
   });
@@ -34,7 +38,7 @@ function initMap() {
     const flightTwo = new google.maps.Polyline({
     path: londonToJoburg,
     geodesic: true,
-    strokeColor: "#FF0000",
+    strokeColor: "#000000",
     strokeOpacity: 1.0,
     strokeWeight: 2,
   });
@@ -49,7 +53,7 @@ function initMap() {
     const driveOne = new google.maps.Polyline({
     path: joburgToMokopane,
     geodesic: true,
-    strokeColor: "#FF0000",
+    strokeColor: "#ce7e00",
     strokeOpacity: 1.0,
     strokeWeight: 2,
   });
@@ -64,7 +68,7 @@ function initMap() {
     const driveTwo = new google.maps.Polyline({
     path: mokopaneToAskari,
     geodesic: true,
-    strokeColor: "#FF0000",
+    strokeColor: "#ce7e00",
     strokeOpacity: 1.0,
     strokeWeight: 2,
   });
