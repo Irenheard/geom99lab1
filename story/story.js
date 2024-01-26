@@ -1,7 +1,7 @@
 function initMap() {
 	
 /*
-template referenced:
+template for the polyline referenced:
 https://developers.google.com/maps/documentation/javascript/examples/polyline-simple#maps_polyline_simple-html 
 */
 
@@ -16,6 +16,14 @@ https://developers.google.com/maps/documentation/javascript/examples/polyline-si
 	const mokopane = { lat: -24.187, lng: 29.012 };
 	// Pidwa wilderness reserve!!!
 	const askari = { lat: -24.064, lng: 30.559 };
+	
+	/*Icon variables*/
+	//airport icon
+	const airport = "https://raw.githubusercontent.com/Irenheard/geom99lab1/main/story/airport.png";
+	//shopping Icon
+	const shop = "https://raw.githubusercontent.com/Irenheard/geom99lab1/main/story/shop.png";
+	//elephant icon
+	const elephant = "https://raw.githubusercontent.com/Irenheard/geom99lab1/main/story/elephant.png";
 	
 	const map = new google.maps.Map(document.getElementById("map"), {
 		zoom: 3,
@@ -85,10 +93,22 @@ https://developers.google.com/maps/documentation/javascript/adding-a-legend#maps
 			name: "Drive",
 			icon: "drive.png",
 		},
-		smcircle: {
+		drive: {
 			name: "Flight",
 			icon:"flight.png",
 		},
+		plane: {
+			name: "Airport"	,
+			icon: "airport.png"
+		},
+		market: {
+			name: "Shop"	,
+			icon: "shop.png"
+		},
+		africa: {
+			name: "Pidwa"	,
+			icon: "elephant.png"
+		},		
 	};
 	
 	const legend = document.getElementById("legend");
@@ -105,7 +125,40 @@ https://developers.google.com/maps/documentation/javascript/adding-a-legend#maps
 
 	map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
 	
+/*
+template for the markers referenced:
+https://developers.google.com/maps/documentation/javascript/markers
+*/
 	
+	const airportOneMarker = new google.maps.Marker({
+		position: toronto,
+		map,
+		icon: airport,
+	});
+	
+	const airportTwoMarker = new google.maps.Marker({
+		position: london,
+		map,
+		icon: airport,
+	});
+	
+	const airportThreeMarker = new google.maps.Marker({
+		position: joburg,
+		map,
+		icon: airport,
+	});
+	
+	const shopMarker = new google.maps.Marker({
+		position: mokopane,
+		map,
+		icon: shop,
+	});
+	
+	const pidwaMarker = new google.maps.Marker({
+		position: askari,
+		map,
+		icon: elephant,
+	});
 	
 	
 	
